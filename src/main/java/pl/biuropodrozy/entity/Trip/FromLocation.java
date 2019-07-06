@@ -1,9 +1,11 @@
-package pl.biuropodrozy.entity;
+package pl.biuropodrozy.entity.Trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.Airport;
+import pl.biuropodrozy.entity.City;
 
 import javax.persistence.*;
 
@@ -12,12 +14,14 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Airport {
+@Table(name = "from_location")
+public class FromLocation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
     @OneToOne
-    private Address address;
+    private City city;
+    @OneToOne
+    private Airport airport;
 }

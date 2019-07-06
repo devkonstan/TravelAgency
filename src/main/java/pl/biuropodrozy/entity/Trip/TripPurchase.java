@@ -1,4 +1,4 @@
-package pl.biuropodrozy.entity;
+package pl.biuropodrozy.entity.Trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,18 +6,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Airport {
+public class TripPurchase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
     @OneToOne
-    private Address address;
+    private Trip trip;
+    @OneToMany
+    private Set<Participant> participant;
 }

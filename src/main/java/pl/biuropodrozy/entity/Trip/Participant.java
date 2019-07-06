@@ -1,9 +1,10 @@
-package pl.biuropodrozy.entity;
+package pl.biuropodrozy.entity.Trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.Address;
 
 import javax.persistence.*;
 
@@ -12,12 +13,15 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Airport {
+public class Participant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     private String name;
+    private String surname;
+    private Integer age;
     @OneToOne
     private Address address;
+    @OneToOne
+    private Contact contact;
 }
