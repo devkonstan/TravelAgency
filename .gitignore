@@ -27,3 +27,5 @@ build/
 .vscode/
 ### db files ###
 *.db
+
+instrukcje.txt
