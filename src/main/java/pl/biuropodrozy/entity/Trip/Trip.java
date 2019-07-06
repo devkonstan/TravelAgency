@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.Trip.Catering;
+import pl.biuropodrozy.entity.Trip.DestinyLocation;
+import pl.biuropodrozy.entity.Trip.FromLocation;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -32,4 +35,12 @@ public class Trip {
     private boolean promoted;
     private Integer numberOfAdult;
     private Integer numberOfChild;
+
+
+    @Override
+    public String toString() {
+        return "Trip{" +
+                "id=" + id +
+                '}';
+    }
 }

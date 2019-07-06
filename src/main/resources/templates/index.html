@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Strona główna</title>
+
+</head>
+<body>
+
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>NAZWA</th>
+    </tr>
+
+    <tr th:each="trip,iterationStatus : ${trips}">
+        <td th:text="${iterationStatus.count}">1</td>
+        <td th:text="${trip}">Wycieczka</td>
+    </tr>
+
+</table>
+
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
