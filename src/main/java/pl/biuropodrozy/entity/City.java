@@ -26,4 +26,16 @@ public class City {
     @OneToOne
     private Airport airport;
 
+    public City(String name, Address address, Set<Hotel> hotel, Airport airport) {
+        this.name = name;
+        this.address = address;
+        this.hotel = hotel;
+        this.airport = airport;
+    }
+
+    public City(String name, Address address, Airport airport) {
+        this.name = name;
+        this.address = address;
+        this.airport = airport;
+    }
 }

@@ -20,4 +20,10 @@ public class Airport {
     private String name;
     @OneToOne
     private Address address;
+
+    public Airport(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
 }
+

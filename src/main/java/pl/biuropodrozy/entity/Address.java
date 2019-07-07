@@ -24,4 +24,11 @@ public class Address {
     private Integer houseNumber;
     @Column(name = "street_number")
     private Integer streetNumber;
+
+    public Address(String street, String zipCode, Integer houseNumber, Integer streetNumber) {
+        this.street = street;
+        this.zipCode = zipCode;
+        this.houseNumber = houseNumber;
+        this.streetNumber = streetNumber;
+    }
 }

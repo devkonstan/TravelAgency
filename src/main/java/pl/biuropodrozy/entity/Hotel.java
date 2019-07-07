@@ -22,4 +22,9 @@ public class Hotel {
     private StarRate starRate;
     private String description;
 
+    public Hotel(String name, StarRate starRate, String description) {
+        this.name = name;
+        this.starRate = starRate;
+        this.description = description;
+    }
 }

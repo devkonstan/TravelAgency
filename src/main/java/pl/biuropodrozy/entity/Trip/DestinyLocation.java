@@ -27,4 +27,10 @@ public class DestinyLocation {
     private Hotel hotel;
     @OneToOne
     private Airport airport;
+
+    public DestinyLocation(City city, Hotel hotel, Airport airport) {
+        this.city = city;
+        this.hotel = hotel;
+        this.airport = airport;
+    }
 }

@@ -24,4 +24,9 @@ public class FromLocation {
     private City city;
     @OneToOne
     private Airport airport;
+
+    public FromLocation(City city, Airport airport) {
+        this.city = city;
+        this.airport = airport;
+    }
 }
