@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Strona główna</title>
-
+    <link rel="stylesheet" href="../static/tripList.css" th:href="@{static/tripList.css}">
+    <link    />
 </head>
 <body>
 
-<table>
-
+<table border="5" align="center">
     <tr>
         <th>ID</th>
-        <th>NAZWA</th>
+        <th>Skąd</th>
+        <th>Dokąd</th>
+        <th>Data wyjazdu</th>
+        <th>Data powrotu</th>
+        <th>Wyżywienie</th>
+        <th>Cena za dorosłego</th>
+        <th>Cena za dziecko</th>
+        <th>Promocja</th>
     </tr>
 
     <tr th:each="trip,iterationStatus : ${trips}">
         <td th:text="${iterationStatus.count}">1</td>
-        <td th:text="${trip}">Wycieczka</td>
+        <td th:text="${trip.id}">Wycieczka</td>
     </tr>
 
 </table>
