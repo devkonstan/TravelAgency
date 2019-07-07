@@ -4,9 +4,6 @@ package pl.biuropodrozy.entity.Trip;
 //import lombok.Getter;
 //import lombok.NoArgsConstructor;
 //import lombok.Setter;
-import pl.biuropodrozy.entity.Trip.Catering;
-import pl.biuropodrozy.entity.Trip.DestinyLocation;
-import pl.biuropodrozy.entity.Trip.FromLocation;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -25,16 +22,29 @@ public class Trip {
     private FromLocation fromLocation;
     @OneToOne
     private DestinyLocation destinyLocation;
-    private LocalDate departure;
-    private LocalDate arrival;
+    @Column(name="start_date")
+    private LocalDate startDate;
+    @Column(name="end_date")
+    private LocalDate endDate;
     private Catering catering;
-    @Column(name = "value_adult")
+    @Column(name = "price_adult")
     private Double priceForAdult;
-    @Column(name = "value_child")
+    @Column(name = "price_child")
     private Double priceForChild;
     private boolean promoted;
     private Integer numberOfAdult;
     private Integer numberOfChild;
+
+    public Trip(FromLocation fromLocation, DestinyLocation destinyLocation, LocalDate startDate, LocalDate endDate, Catering catering, Double priceForAdult, Double priceForChild, boolean promoted) {
+        this.fromLocation = fromLocation;
+        this.destinyLocation = destinyLocation;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.catering = catering;
+        this.priceForAdult = priceForAdult;
+        this.priceForChild = priceForChild;
+        this.promoted = promoted;
+    }
 
     public Trip() {
     }
@@ -63,20 +73,20 @@ public class Trip {
         this.destinyLocation = destinyLocation;
     }
 
-    public LocalDate getDeparture() {
-        return departure;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setDeparture(LocalDate departure) {
-        this.departure = departure;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
-    public LocalDate getArrival() {
-        return arrival;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setArrival(LocalDate arrival) {
-        this.arrival = arrival;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
     public Catering getCatering() {
