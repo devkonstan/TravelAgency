@@ -1,4 +1,4 @@
-package pl.biuropodrozy.entity.Trip;
+package pl.biuropodrozy.entity.trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,17 +32,9 @@ public class Trip {
     @Column(name = "price_child")
     private Double priceForChild;
     private boolean promoted;
-    private Integer numberOfAdult;
-    private Integer numberOfChild;
 
-    @Override
-    public String toString() {
-        return "Trip{" +
-                "id=" + id +
-                '}';
-    }
 
-    public Trip(FromLocation fromLocation, DestinyLocation destinyLocation, LocalDate startDate, LocalDate endDate, Catering catering, Double priceForAdult, Double priceForChild, boolean promoted, Integer numberOfAdult, Integer numberOfChild) {
+    public Trip(FromLocation fromLocation, DestinyLocation destinyLocation, LocalDate startDate, LocalDate endDate, Catering catering, Double priceForAdult, Double priceForChild, boolean promoted) {
         this.fromLocation = fromLocation;
         this.destinyLocation = destinyLocation;
         this.startDate = startDate;
@@ -51,7 +43,5 @@ public class Trip {
         this.priceForAdult = priceForAdult;
         this.priceForChild = priceForChild;
         this.promoted = promoted;
-        this.numberOfAdult = numberOfAdult;
-        this.numberOfChild = numberOfChild;
     }
 }

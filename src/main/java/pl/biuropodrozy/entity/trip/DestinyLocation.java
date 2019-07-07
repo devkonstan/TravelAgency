@@ -1,4 +1,4 @@
-package pl.biuropodrozy.entity.Trip;
+package pl.biuropodrozy.entity.trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.biuropodrozy.entity.Airport;
 import pl.biuropodrozy.entity.City;
+import pl.biuropodrozy.entity.Hotel;
 
 import javax.persistence.*;
 
@@ -14,8 +15,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "from_location")
-public class FromLocation {
+@Table(name = "destiny_location")
+public class DestinyLocation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,18 +24,22 @@ public class FromLocation {
     @OneToOne
     private City city;
     @OneToOne
+    private Hotel hotel;
+    @OneToOne
     private Airport airport;
 
-    public FromLocation(City city, Airport airport) {
+    public DestinyLocation(City city, Hotel hotel, Airport airport) {
         this.city = city;
+        this.hotel = hotel;
         this.airport = airport;
     }
 
     @Override
     public String toString() {
-        return "FromLocation{" +
+        return "DestinyLocation{" +
                 "id=" + id +
                 ", city=" + city +
+                ", hotel=" + hotel +
                 ", airport=" + airport +
                 '}';
     }

@@ -19,23 +19,22 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @OneToOne
-    private Address address;
     @OneToMany
     private Set<Hotel> hotel;
     @OneToOne
     private Airport airport;
+    @OneToOne
+    private Country country;
 
-    public City(String name, Address address, Set<Hotel> hotel, Airport airport) {
+    public City(String name, Set<Hotel> hotel, Airport airport, Country country) {
         this.name = name;
-        this.address = address;
         this.hotel = hotel;
         this.airport = airport;
+        this.country = country;
     }
 
-    public City(String name, Address address, Airport airport) {
+    public City(String name, Airport airport) {
         this.name = name;
-        this.address = address;
         this.airport = airport;
     }
 }

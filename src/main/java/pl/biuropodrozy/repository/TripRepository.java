@@ -3,10 +3,10 @@ package pl.biuropodrozy.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import pl.biuropodrozy.entity.Trip.Catering;
-import pl.biuropodrozy.entity.Trip.DestinyLocation;
-import pl.biuropodrozy.entity.Trip.FromLocation;
-import pl.biuropodrozy.entity.Trip.Trip;
+import pl.biuropodrozy.entity.trip.Catering;
+import pl.biuropodrozy.entity.trip.DestinyLocation;
+import pl.biuropodrozy.entity.trip.FromLocation;
+import pl.biuropodrozy.entity.trip.Trip;
 
 import java.time.LocalDate;
 import java.util.List;

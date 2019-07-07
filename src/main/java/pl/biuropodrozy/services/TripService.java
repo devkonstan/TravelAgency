@@ -2,9 +2,9 @@ package pl.biuropodrozy.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.biuropodrozy.entity.Trip.DestinyLocation;
-import pl.biuropodrozy.entity.Trip.FromLocation;
-import pl.biuropodrozy.entity.Trip.Trip;
+import pl.biuropodrozy.entity.trip.DestinyLocation;
+import pl.biuropodrozy.entity.trip.FromLocation;
+import pl.biuropodrozy.entity.trip.Trip;
 import pl.biuropodrozy.repository.TripRepository;
 
 import java.time.LocalDate;

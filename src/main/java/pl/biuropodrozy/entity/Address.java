@@ -31,4 +31,10 @@ public class Address {
         this.houseNumber = houseNumber;
         this.streetNumber = streetNumber;
     }
+
+    public Address(String street, String zipCode, Integer streetNumber) {
+        this.street = street;
+        this.zipCode = zipCode;
+        this.streetNumber = streetNumber;
+    }
 }

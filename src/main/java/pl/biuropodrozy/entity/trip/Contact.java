@@ -1,4 +1,4 @@
-package pl.biuropodrozy.entity.Trip;
+package pl.biuropodrozy.entity.trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

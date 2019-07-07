@@ -1,4 +1,4 @@
-package pl.biuropodrozy.entity.Trip;
+package pl.biuropodrozy.entity.trip;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +22,6 @@ public class TripPurchase {
     private Trip trip;
     @OneToMany
     private Set<Participant> participant;
+    private Integer numberOfAdult;
+    private Integer numberOfChild;
 }

@@ -21,10 +21,13 @@ public class Hotel {
     @Enumerated(value = EnumType.STRING)
     private StarRate starRate;
     private String description;
+    @OneToOne
+    private Address address;
 
-    public Hotel(String name, StarRate starRate, String description) {
+    public Hotel(String name, StarRate starRate, String description, Address address) {
         this.name = name;
         this.starRate = starRate;
         this.description = description;
+        this.address = address;
     }
 }

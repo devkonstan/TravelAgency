@@ -18,6 +18,8 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @OneToOne
-    private City city;
+
+    public Country(String name) {
+        this.name = name;
+    }
 }
