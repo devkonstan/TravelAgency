@@ -14,6 +14,9 @@ import java.util.List;
 @Repository
 public interface TripRepository extends CrudRepository<Trip, Integer> {
 
+    @Query(value = "SELECT * FROM TRIP", nativeQuery = true)
+    List<Trip> findAll();
+
     @Query(value = "SELECT u FROM Trip u WHERE u.destinyLocation = ?1")
     List<Trip> findTripByDestinyLocation(DestinyLocation destinyLocation);
 

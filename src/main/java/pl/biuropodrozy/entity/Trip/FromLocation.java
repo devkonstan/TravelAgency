@@ -29,4 +29,13 @@ public class FromLocation {
         this.city = city;
         this.airport = airport;
     }
+
+    @Override
+    public String toString() {
+        return "FromLocation{" +
+                "id=" + id +
+                ", city=" + city +
+                ", airport=" + airport +
+                '}';
+    }
 }

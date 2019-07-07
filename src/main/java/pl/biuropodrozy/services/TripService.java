@@ -21,8 +21,8 @@ public class TripService {
         this.tripRepository = tripRepository;
     }
 
-    public void getTrips() {
-        tripRepository.findAll();
+   public List<Trip> findAll() {
+        return tripRepository.findAll();
     }
 
     public void addTrip(Trip trip) {

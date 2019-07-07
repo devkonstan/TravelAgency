@@ -33,4 +33,14 @@ public class DestinyLocation {
         this.hotel = hotel;
         this.airport = airport;
     }
+
+    @Override
+    public String toString() {
+        return "DestinyLocation{" +
+                "id=" + id +
+                ", city=" + city +
+                ", hotel=" + hotel +
+                ", airport=" + airport +
+                '}';
+    }
 }
