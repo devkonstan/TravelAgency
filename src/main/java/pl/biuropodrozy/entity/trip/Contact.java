@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.ID;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -13,11 +14,9 @@ import javax.validation.constraints.Email;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Contact {
+public class Contact extends ID {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
     @Column(name = "phone_number")
     private String phoneNumber;
     @Email

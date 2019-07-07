@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.biuropodrozy.entity.Address;
+import pl.biuropodrozy.entity.ID;
 
 import javax.persistence.*;
 
@@ -13,10 +14,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Participant {
+public class Participant extends ID {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
     private String surname;
     private Integer age;

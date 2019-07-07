@@ -9,14 +9,10 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class Hotel {
+public class Hotel extends ID {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     private String name;
     @Enumerated(value = EnumType.STRING)
     private StarRate starRate;

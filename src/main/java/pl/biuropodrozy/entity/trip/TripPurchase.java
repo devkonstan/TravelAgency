@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.ID;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,11 +14,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-public class TripPurchase {
+public class TripPurchase extends ID {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     @OneToOne
     private Trip trip;
     @OneToMany

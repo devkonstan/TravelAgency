@@ -7,20 +7,18 @@ import lombok.Setter;
 import pl.biuropodrozy.entity.Airport;
 import pl.biuropodrozy.entity.City;
 import pl.biuropodrozy.entity.Hotel;
+import pl.biuropodrozy.entity.ID;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @Table(name = "destiny_location")
-public class DestinyLocation {
+public class DestinyLocation extends ID {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
     @OneToOne
     private City city;
     @OneToOne
@@ -34,13 +32,4 @@ public class DestinyLocation {
         this.airport = airport;
     }
 
-    @Override
-    public String toString() {
-        return "DestinyLocation{" +
-                "id=" + id +
-                ", city=" + city +
-                ", hotel=" + hotel +
-                ", airport=" + airport +
-                '}';
-    }
 }

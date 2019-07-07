@@ -1,23 +1,19 @@
 package pl.biuropodrozy.entity.trip;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.ID;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-public class Trip {
+public class Trip extends ID {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     @OneToOne
     private FromLocation fromLocation;
     @OneToOne
