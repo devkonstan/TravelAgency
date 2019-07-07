@@ -22,12 +22,14 @@ public class Trip {
     private FromLocation fromLocation;
     @OneToOne
     private DestinyLocation destinyLocation;
-    private LocalDate departure;
-    private LocalDate arrival;
+    @Column(name = "start_date")
+    private LocalDate startDate;
+    @Column(name = "end_date")
+    private LocalDate endDate;
     private Catering catering;
-    @Column(name = "value_adult")
+    @Column(name = "price_adult")
     private Double priceForAdult;
-    @Column(name = "value_child")
+    @Column(name = "price_child")
     private Double priceForChild;
     private boolean promoted;
     private Integer numberOfAdult;
