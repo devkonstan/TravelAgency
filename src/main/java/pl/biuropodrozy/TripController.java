@@ -13,7 +13,7 @@ import java.util.Set;
 
 //rozporzadza przekierowaniami
 @Controller
-public class MainPageController {
+public class TripController {
 
     @GetMapping()
     @ResponseBody //niech sie cos wewnatrz wywietli
@@ -25,7 +25,7 @@ public class MainPageController {
     private TripService tripService;
 
     @Autowired
-    public MainPageController(TripService tripService) {
+    public TripController(TripService tripService) {
         this.tripService = tripService;
     }
 
@@ -33,14 +33,8 @@ public class MainPageController {
     public ModelAndView getMain() {
         ModelAndView m = new ModelAndView();
         m.setViewName("index");
-        initTrip();
         m.addObject("trips", tripService.findAll());
         return m;
     }
 
-    public void initTrip() {
-        for (int i = 0; i <= 10; i++) {
-            trip.add(new Trip());
-        }
-    }
 }
