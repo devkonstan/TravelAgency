@@ -1,18 +1,16 @@
 package pl.biuropodrozy.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import pl.biuropodrozy.entity.trip.Catering;
-import pl.biuropodrozy.entity.trip.DestinyLocation;
-import pl.biuropodrozy.entity.trip.FromLocation;
 import pl.biuropodrozy.entity.trip.Trip;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface TripRepository extends CrudRepository<Trip, Integer> {
+public interface TripRepository extends JpaRepository<Trip, Integer> {
 
     @Query(value = "SELECT * FROM TRIP", nativeQuery = true)
     List<Trip> findAll();
@@ -36,5 +34,6 @@ public interface TripRepository extends CrudRepository<Trip, Integer> {
     List<Trip> findTripByDays(LocalDate departure, LocalDate homecoming);
 
     @Query("SELECT u FROM Trip u WHERE u.fromLocation = ?1 and u.destinyLocation = ?2 and u.startDate = ?3 and u.endDate = ?4")
-    List<Trip> multipleTripFilter(FromLocation fromLocation, DestinyLocation destinyLocation, LocalDate start, LocalDate end);
+    List<Trip> multipleTripFilter(String fromLocation, String destinyLocation, LocalDate start, LocalDate end);
 }
+//trip dto, trip builder

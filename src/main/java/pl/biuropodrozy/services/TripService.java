@@ -2,8 +2,6 @@ package pl.biuropodrozy.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.biuropodrozy.entity.trip.DestinyLocation;
-import pl.biuropodrozy.entity.trip.FromLocation;
 import pl.biuropodrozy.entity.trip.Trip;
 import pl.biuropodrozy.repository.TripRepository;
 
@@ -21,7 +19,7 @@ public class TripService {
         this.tripRepository = tripRepository;
     }
 
-   public List<Trip> findAll() {
+    public List<Trip> findAll() {
         return tripRepository.findAll();
     }
 
@@ -29,8 +27,8 @@ public class TripService {
         tripRepository.save(trip);
     }
 
-    public List<Trip> multipleTripFilter(FromLocation fromLocation,
-                                         DestinyLocation destinyLocation,
+    public List<Trip> multipleTripFilter(String fromLocation,
+                                         String destinyLocation,
                                          LocalDate start, LocalDate end) {
         List<Trip> tripList = new ArrayList<>();
         tripList.addAll(tripRepository.multipleTripFilter(fromLocation, destinyLocation, start, end));

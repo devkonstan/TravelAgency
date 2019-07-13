@@ -1,5 +1,7 @@
 package pl.biuropodrozy.entity.trip;
 
+import jdk.internal.instrumentation.TypeMapping;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,18 +12,21 @@ import java.time.LocalDate;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+
 public class Trip extends ID {
 
-    @OneToOne
-    private FromLocation fromLocation;
-    @OneToOne
-    private DestinyLocation destinyLocation;
+//    @OneToOne
+    private String fromLocation;
+//    @OneToOne
+    private String destinyLocation;
     @Column(name = "start_date")
     private LocalDate startDate;
     @Column(name = "end_date")
     private LocalDate endDate;
+    @Enumerated(EnumType.STRING)
     private Catering catering;
     @Column(name = "price_adult")
     private Double priceForAdult;
@@ -30,14 +35,4 @@ public class Trip extends ID {
     private boolean promoted;
 
 
-    public Trip(FromLocation fromLocation, DestinyLocation destinyLocation, LocalDate startDate, LocalDate endDate, Catering catering, Double priceForAdult, Double priceForChild, boolean promoted) {
-        this.fromLocation = fromLocation;
-        this.destinyLocation = destinyLocation;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.catering = catering;
-        this.priceForAdult = priceForAdult;
-        this.priceForChild = priceForChild;
-        this.promoted = promoted;
-    }
 }

@@ -3,11 +3,8 @@ package pl.biuropodrozy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Controller;
 import pl.biuropodrozy.entity.*;
 import pl.biuropodrozy.entity.trip.Catering;
-import pl.biuropodrozy.entity.trip.DestinyLocation;
-import pl.biuropodrozy.entity.trip.FromLocation;
 import pl.biuropodrozy.entity.trip.Trip;
 import pl.biuropodrozy.repository.*;
 
@@ -15,7 +12,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Controller
+
 public class DataBaseStarter {
 
     private TripRepository tripRepository;
