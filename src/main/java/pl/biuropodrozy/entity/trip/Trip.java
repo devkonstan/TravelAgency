@@ -4,12 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.biuropodrozy.entity.City;
 import pl.biuropodrozy.entity.ID;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -20,10 +18,10 @@ import java.time.LocalDate;
 
 public class Trip extends ID {
 
-//    @OneToOne
-    private String fromLocation;
-//    @OneToOne
-    private String destinyLocation;
+    @ManyToOne
+    private City fromLocation;
+    @ManyToOne
+    private City destinyLocation;
     @Column(name = "start_date")
     private LocalDate startDate;
     @Column(name = "end_date")

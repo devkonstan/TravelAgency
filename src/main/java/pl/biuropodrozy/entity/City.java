@@ -9,28 +9,15 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class City extends ID {
 
     private String name;
-    @OneToMany
-    private Set<Hotel> hotel;
-    @OneToOne
-    private Airport airport;
-    @OneToOne
-    private Country country;
+    private String airport;
+    private String country;
 
-    public City(String name, Set<Hotel> hotel, Airport airport, Country country) {
-        this.name = name;
-        this.hotel = hotel;
-        this.airport = airport;
-        this.country = country;
-    }
 
-    public City(String name, Airport airport) {
-        this.name = name;
-        this.airport = airport;
-    }
 }

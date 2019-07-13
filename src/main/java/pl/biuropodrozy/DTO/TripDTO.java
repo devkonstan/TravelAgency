@@ -13,8 +13,8 @@ import java.time.LocalDate;
 public class TripDTO {
 
     private Integer id;
-    private String fromLocation;
-    private String destinyLocation;
+    private Integer fromLocationID;
+    private Integer destinyLocationID;
 
     private LocalDate startDate;
     private LocalDate endDate;
