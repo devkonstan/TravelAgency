@@ -2,7 +2,6 @@ package pl.biuropodrozy.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.biuropodrozy.DTO.CityDTO;
 import pl.biuropodrozy.builders.CityToCityBuilder;
 import pl.biuropodrozy.entity.City;
 import pl.biuropodrozy.repository.CityRepository;

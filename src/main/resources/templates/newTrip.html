@@ -3,55 +3,51 @@
 <head>
     <title>REJESTRACJA</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <th:block th:replace="fragments/header :: header-css"/>
-    <link rel="stylesheet" th:href="@{/css/tripList.css}"/>
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
-<form th:action="@{/addtrip}" th:object="${tripFormData}" method="post">
 
+<form th:action="@{/admin/addtrip}" th:object="${tripFormData}" method="post">
 
-    <label for="name">Skąd:</label>
-    <input id="name" type="text" th:field="*{fromLocation}"  />
+    <label for="from">Skąd:</label>
+    <select id="from" th:field="*{fromLocation}">
+        <option th:each="fromLocation: ${cityList}" th:value="${fromLocation}" th:text="${fromLocation.getName()}"></option>
+    </select>
     <div class="error" th:errors="*{fromLocation}"></div>
 
-    <label for="surname">Dokąd:</label>
-    <input id="surname" type="text" th:field="*{destinyLocation}" autofocus class="form-control"/>
+    <label for="destiny">Dokąd:</label>
+    <select id="destiny" th:field="*{destinyLocation}">
+        <option th:each="destinyLocation: ${cityList}" th:value="${destinyLocation}" th:text="${destinyLocation.getName()}"></option>
+    </select>
     <div class="error" th:errors="*{destinyLocation}"></div>
 
-    <label for="birth">Data wyjazdu:</label>
-    <input id="birth" type="text" placeholder="yyyy-mm-dd" th:field="*{birthDate}" autofocus class="form-control"/>
-    <div class="error" th:errors="*{birthDate}"></div>
+    <label for="start">Data wyjazdu:</label>
+    <input id="start" type="text" placeholder="yyyy-mm-dd" th:field="*{startDate}"/>
+    <div class="error" th:errors="*{startDate}"></div>
 
-    <label for="birth">Data powrotu:</label>
-    <input id="birth" type="text" placeholder="yyyy-mm-dd" th:field="*{birthDate}" autofocus class="form-control"/>
-    <div class="error" th:errors="*{birthDate}"></div>
+    <label for="end">Data powrotu:</label>
+    <input id="end" type="text" placeholder="yyyy-mm-dd" th:field="*{endDate}"/>
+    <div class="error" th:errors="*{endDate}"></div>
 
-    <label for="country">Wyżywienie:</label>
-    <select autofocus class="form-control" id="country" th:field="*{country}">
-        <option th:value="''" th:text="Wybierz"></option>
-        <option th:each="country : ${countries}" th:value="${country.symbol}" th:text="${country}"></option>
+    <label for="catering">Wyżywienie:</label>
+    <select id="catering" th:field="*{catering}">
+        <option th:each="catering : ${caterings}" th:value="${catering.symbol}" th:text="${catering}"></option>
     </select>
-    <div class="error" th:errors="*{country}"></div>
+    <div class="error" th:errors="*{catering}"></div>
 
-    <label for="street">Cena za dorosłego:</label>
-    <input id="street" type="text" th:field="*{street}"  autofocus class="form-control"/>
-    <div class="error" th:errors="*{street}"></div>
+    <label for="priceAdult">Cena za dorosłego:</label>
+    <input id="priceAdult" type="text" th:field="*{priceForAdult}"/>
+    <div class="error" th:errors="*{priceForAdult}"></div>
 
-    <label for="inputPesel"> Cena za dziecko:</label>
-    <input id="inputPesel" type="text"  autofocus class="form-control" th:field="*{pesel}"/>
-    <div class="error" th:errors="*{pesel}"></div>
+    <label for="priceChild"> Cena za dziecko:</label>
+    <input id="priceChild" type="text" th:field="*{priceForChild}"/>
+    <div class="error" th:errors="*{priceForChild}"></div>
 
-    <label for="country">Promocja:</label>
-    <select autofocus class="form-control" id="country" th:field="*{country}">
-        <option th:value="''" th:text="Wybierz"></option>
-        <option th:each="country : ${countries}" th:value="${country.symbol}" th:text="${country}"></option>
-    </select>
-    <div class="error" th:errors="*{country}"></div>
+    <label> <input type="checkbox" th:field="*{promoted}" th:value="true"> Promocja</label>
 
-    <div th:replace="fragments/footer :: footer"></div>
+    <div class="error" th:errors="*{promoted}"></div>
+
+    <input type="submit" value="Wyślij">
 </form>
-
 
 </body>
 </html>

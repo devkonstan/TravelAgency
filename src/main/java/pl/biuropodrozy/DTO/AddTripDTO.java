@@ -3,6 +3,7 @@ package pl.biuropodrozy.DTO;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -24,9 +25,9 @@ public class AddTripDTO {
     @NotBlank(message = "Pole musi zostać wypełnione")
     private String catering;
 
-    @NotBlank(message = "Pole musi zostać wypełnione")
+    @NotNull(message = "Pole musi zostać wypełnione")
     private Double priceForAdult;
-    @NotBlank(message = "Pole musi zostać wypełnione")
+    @NotNull(message = "Pole musi zostać wypełnione")
     private Double priceForChild;
 
     private boolean promoted;
