@@ -12,13 +12,11 @@ import java.util.Optional;
 @Service
 public class TripToTripDTOBuilder {
 
-
     @Autowired
     private TripRepository tripRepository;
 
     @Autowired
     private CityRepository cityRepository;
-
 
     public TripDTO buildDTO(Trip trip) {
         return TripDTO.builder()

@@ -18,7 +18,7 @@ public class TripController {
     @GetMapping()
     @ResponseBody //niech sie cos wewnatrz wywietli
     public String hello() {
-        return "hello user";
+        return "mainpage";
     }
 
     Set<Trip> trip = new HashSet<>();

@@ -58,7 +58,7 @@ public class TripService {
         List<City> cityList = cityService.findAll();
         addTrip(new Trip(cityList.get(1), cityList.get(2), LocalDate.now(), LocalDate.now().plusDays(7), Catering.AI, 1500.0, 1400.0, false));
         addTrip(new Trip(cityService.findCityById(3).get(),cityService.findCityById(4).get(), LocalDate.now(), LocalDate.now().plusDays(14), Catering.BB, 2500.0, 2200.0, true));
-        addTrip(new Trip(cityService.findCityByName("gdansk").get(),cityService.findCityByName("mallorca").get(), LocalDate.now().plusDays(10), LocalDate.now().plusDays(17), Catering.HB, 1800.0, 1400.0, false));
+        addTrip(new Trip(cityService.findCityByName("gdańsk").get(),cityService.findCityByName("mallorca").get(), LocalDate.now().plusDays(10), LocalDate.now().plusDays(17), Catering.HB, 1800.0, 1400.0, false));
     }
 
 }

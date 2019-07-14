@@ -1,9 +1,6 @@
 package pl.biuropodrozy.entity.trip;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import pl.biuropodrozy.entity.City;
 import pl.biuropodrozy.entity.ID;
 
@@ -15,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-
+@Builder
 public class Trip extends ID {
 
     @ManyToOne

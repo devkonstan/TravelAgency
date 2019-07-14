@@ -11,6 +11,7 @@
 <body>
 
 <table border="5" align="center">
+
     <tr>
         <th>ID</th>
         <th>Skąd</th>
@@ -25,8 +26,8 @@
 
     <tr th:each="trip,iterationStatus : ${trips}">
         <td th:text="${iterationStatus.count}">1</td>
-        <td th:text="${trip.fromLocation}">name</td>
-        <td th:text="${trip.destinyLocation}">name</td>
+        <td th:text="${trip.fromLocation.getName()}">name</td>
+        <td th:text="${trip.destinyLocation.getName()}">name</td>
         <td th:text="${trip.startDate}">name</td>
         <td th:text="${trip.endDate}">name</td>
         <td th:text="${trip.catering}">name</td>
@@ -37,7 +38,6 @@
     </tr>
 
 </table>
-
 
 </div>
 <script src="js/jquery.min.js"></script>

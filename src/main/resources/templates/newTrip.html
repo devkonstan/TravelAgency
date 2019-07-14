@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <title>REJESTRACJA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:replace="fragments/header :: header-css"/>
+    <link rel="stylesheet" th:href="@{/css/tripList.css}"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<form th:action="@{/addtrip}" th:object="${tripFormData}" method="post">
+
+
+    <label for="name">Skąd:</label>
+    <input id="name" type="text" th:field="*{fromLocation}"  />
+    <div class="error" th:errors="*{fromLocation}"></div>
+
+    <label for="surname">Dokąd:</label>
+    <input id="surname" type="text" th:field="*{destinyLocation}" autofocus class="form-control"/>
+    <div class="error" th:errors="*{destinyLocation}"></div>
+
+    <label for="birth">Data wyjazdu:</label>
+    <input id="birth" type="text" placeholder="yyyy-mm-dd" th:field="*{birthDate}" autofocus class="form-control"/>
+    <div class="error" th:errors="*{birthDate}"></div>
+
+    <label for="birth">Data powrotu:</label>
+    <input id="birth" type="text" placeholder="yyyy-mm-dd" th:field="*{birthDate}" autofocus class="form-control"/>
+    <div class="error" th:errors="*{birthDate}"></div>
+
+    <label for="country">Wyżywienie:</label>
+    <select autofocus class="form-control" id="country" th:field="*{country}">
+        <option th:value="''" th:text="Wybierz"></option>
+        <option th:each="country : ${countries}" th:value="${country.symbol}" th:text="${country}"></option>
+    </select>
+    <div class="error" th:errors="*{country}"></div>
+
+    <label for="street">Cena za dorosłego:</label>
+    <input id="street" type="text" th:field="*{street}"  autofocus class="form-control"/>
+    <div class="error" th:errors="*{street}"></div>
+
+    <label for="inputPesel"> Cena za dziecko:</label>
+    <input id="inputPesel" type="text"  autofocus class="form-control" th:field="*{pesel}"/>
+    <div class="error" th:errors="*{pesel}"></div>
+
+    <label for="country">Promocja:</label>
+    <select autofocus class="form-control" id="country" th:field="*{country}">
+        <option th:value="''" th:text="Wybierz"></option>
+        <option th:each="country : ${countries}" th:value="${country.symbol}" th:text="${country}"></option>
+    </select>
+    <div class="error" th:errors="*{country}"></div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</form>
+
+
+</body>
+</html>
