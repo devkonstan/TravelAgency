@@ -41,6 +41,8 @@ public class AdminController {
             model.addAttribute("caterings", Catering.values());
             return "newTrip";
         }
+
+        tripService.addTrip(addTripDTO); //w cityService napisac metode addTrip
         model.addAttribute("registrationData", addTripDTO);
         return "addTripEffect";
     }

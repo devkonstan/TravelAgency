@@ -2,6 +2,8 @@ package pl.biuropodrozy.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.biuropodrozy.DTO.AddTripDTO;
+import pl.biuropodrozy.builders.AddTripDTOToTripBuilder;
 import pl.biuropodrozy.entity.City;
 import pl.biuropodrozy.entity.trip.Catering;
 import pl.biuropodrozy.entity.trip.Trip;
@@ -15,14 +17,17 @@ import java.util.List;
 @Service
 public class TripService {
 
+    private AddTripDTOToTripBuilder addTripDTOToTripBuilder;
     private TripRepository tripRepository;
     private CityService cityService;
 
     @Autowired
-    public TripService(TripRepository tripRepository, CityService cityService) {
+    public TripService(AddTripDTOToTripBuilder addTripDTOToTripBuilder, TripRepository tripRepository, CityService cityService) {
+        this.addTripDTOToTripBuilder = addTripDTOToTripBuilder;
         this.tripRepository = tripRepository;
         this.cityService = cityService;
     }
+
 
     public List<Trip> findAll() {
         return tripRepository.findAll();
@@ -32,6 +37,10 @@ public class TripService {
         tripRepository.save(trip);
     }
 
+    public void addTrip(AddTripDTO addTripDTO) {
+        Trip trip = addTripDTOToTripBuilder.buildTrip(addTripDTO);
+        tripRepository.save(trip);
+    }
     public List<Trip> multipleTripFilter(String fromLocation,
                                          String destinyLocation,
                                          LocalDate start, LocalDate end) {

@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class AddTripDTO {
 
-    @NotBlank(message = "Pole musi zostać wypełnione")
+    @NotBlank(message = "Pole musi zostać wypełnione") //zamienic na regexy analogicznie do shop
     private String fromLocation;
     @NotBlank(message = "Pole musi zostać wypełnione")
     private String destinyLocation;

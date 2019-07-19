@@ -19,6 +19,7 @@ public class CityService {
     private CityToCityBuilder cityToCityBuilder;
 
     public List<City> findAll() {
+
         return cityRepository.findAll();
     }
 
@@ -34,6 +35,5 @@ public class CityService {
         city.setName(city.getName().toLowerCase());
         cityRepository.save(city);
     }
-
 
 }
