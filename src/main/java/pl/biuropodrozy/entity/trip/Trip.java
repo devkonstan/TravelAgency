@@ -26,9 +26,9 @@ public class Trip extends ID {
     @Enumerated(EnumType.STRING)
     private Catering catering;
     @Column(name = "price_adult")
-    private Double priceForAdult;
+    private Integer priceForAdult;
     @Column(name = "price_child")
-    private Double priceForChild;
+    private Integer priceForChild;
     private boolean promoted;
 
 

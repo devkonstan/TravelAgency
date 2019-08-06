@@ -36,4 +36,5 @@ public class CityService {
         cityRepository.save(city);
     }
 
+    //napisac metode addTrip
 }

@@ -1,4 +1,4 @@
-package pl.biuropodrozy;
+package pl.biuropodrozy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +31,7 @@ public class AdminController {
         model.addAttribute(cityService.findAll());
         model.addAttribute("tripFormData", new AddTripDTO());
         model.addAttribute("caterings", Catering.values());
-        return "newTrip";
+        return "addTrip";
     }
 
     @PostMapping(value = "/addtrip")
@@ -39,10 +39,10 @@ public class AdminController {
         if (bindingResult.hasErrors()) {
             model.addAttribute(cityService.findAll());
             model.addAttribute("caterings", Catering.values());
-            return "newTrip";
+            return "addTrip";
         }
 
-        tripService.addTrip(addTripDTO); //w cityService napisac metode addTrip
+        tripService.addTrip(addTripDTO);
         model.addAttribute("registrationData", addTripDTO);
         return "addTripEffect";
     }

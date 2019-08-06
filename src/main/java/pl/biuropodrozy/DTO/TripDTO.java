@@ -20,8 +20,8 @@ public class TripDTO {
     private LocalDate endDate;
     private Catering catering;
 
-    private Double priceForAdult;
-    private Double priceForChild;
+    private Integer priceForAdult;
+    private Integer priceForChild;
     private boolean promoted;
 
 }

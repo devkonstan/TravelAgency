@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.biuropodrozy.DTO.AddTripDTO;
 import pl.biuropodrozy.builders.AddTripDTOToTripBuilder;
 import pl.biuropodrozy.entity.City;
-import pl.biuropodrozy.entity.trip.Catering;
 import pl.biuropodrozy.entity.trip.Trip;
 import pl.biuropodrozy.repository.TripRepository;
 
@@ -41,6 +40,7 @@ public class TripService {
         Trip trip = addTripDTOToTripBuilder.buildTrip(addTripDTO);
         tripRepository.save(trip);
     }
+
     public List<Trip> multipleTripFilter(String fromLocation,
                                          String destinyLocation,
                                          LocalDate start, LocalDate end) {
@@ -65,9 +65,10 @@ public class TripService {
         cityService.addCity(kukesi);
 
         List<City> cityList = cityService.findAll();
-        addTrip(new Trip(cityList.get(1), cityList.get(2), LocalDate.now(), LocalDate.now().plusDays(7), Catering.AI, 1500.0, 1400.0, false));
-        addTrip(new Trip(cityService.findCityById(3).get(),cityService.findCityById(4).get(), LocalDate.now(), LocalDate.now().plusDays(14), Catering.BB, 2500.0, 2200.0, true));
-        addTrip(new Trip(cityService.findCityByName("gdańsk").get(),cityService.findCityByName("mallorca").get(), LocalDate.now().plusDays(10), LocalDate.now().plusDays(17), Catering.HB, 1800.0, 1400.0, false));
+//        addTrip(new Trip(cityList.get(1), cityList.get(2), LocalDate.now(), LocalDate.now().plusDays(7), Catering.AI, 1500.0, 1400.0, false));
+//        addTrip(new Trip(cityService.findCityById(3).get(),cityService.findCityById(4).get(), LocalDate.now(), LocalDate.now().plusDays(14), Catering.BB, 2500.0, 2200.0, true));
+//        addTrip(new Trip(cityService.findCityByName("gdańsk").get(),cityService.findCityByName("mallorca").get(), LocalDate.now().plusDays(10), LocalDate.now().plusDays(17), Catering.HB, 1800.0, 1400.0, false));
     }
 
 }
+

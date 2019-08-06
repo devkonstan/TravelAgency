@@ -26,9 +26,9 @@ public class AddTripDTO {
     private String catering;
 
     @NotNull(message = "Pole musi zostać wypełnione")
-    private Double priceForAdult;
+    private Integer priceForAdult;
     @NotNull(message = "Pole musi zostać wypełnione")
-    private Double priceForChild;
+    private Integer priceForChild;
 
     private boolean promoted;
 

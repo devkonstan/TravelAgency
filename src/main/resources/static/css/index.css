@@ -1,0 +1,19 @@
+table, th, td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.uber-container {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-basis: auto;
+}
+
+

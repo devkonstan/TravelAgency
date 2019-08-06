@@ -1,4 +1,4 @@
-package pl.biuropodrozy;
+package pl.biuropodrozy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +29,7 @@ public class TripController {
         this.tripService = tripService;
     }
 
+    //widoczny dla wszystkich korzystajacych ze strony (zalogowanych/niezalogowanych)
     @GetMapping("/trips")
     public ModelAndView getMain() {
         ModelAndView m = new ModelAndView();
