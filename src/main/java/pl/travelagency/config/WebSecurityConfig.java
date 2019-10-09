@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // jakiekolwiek zapytanie zostanie dopuszczone
                 .anyRequest().permitAll()
                 .and()
-                // zabezpieczenie przed nieautoryzowanymi linkami na naszej stronie
+                // zabezpieczenie przed nieautoryzowanymi linkami na stronie
                 .csrf().disable()
                 // krzaczy sie z bd wiec wylaczamy (disable)
                 .headers().frameOptions().disable();

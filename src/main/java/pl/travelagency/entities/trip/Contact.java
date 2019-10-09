@@ -16,7 +16,6 @@ import javax.validation.constraints.Email;
 @Setter
 public class Contact extends ID {
 
-
     @Column(name = "phone_number")
     private String phoneNumber;
     @Email

@@ -26,7 +26,7 @@ public class AdminController {
     }
 
 
-    @GetMapping(value = "/addtrip") //wrzucic wszystkie atrybuty
+    @GetMapping(value = "/addtrip")
     public String addTripForm(Model model) {
         model.addAttribute(cityService.findAll());
         model.addAttribute("tripFormData", new AddTripDto());
