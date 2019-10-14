@@ -15,11 +15,11 @@ import java.util.Set;
 @Controller
 public class TripController {
 
-    @GetMapping()
-    @ResponseBody //niech sie cos wewnatrz wywietli
-    public String hello() {
-        return "main page";
-    }
+//     @GetMapping()
+//     @ResponseBody //niech sie cos wewnatrz wywietli
+//     public String hello() {
+//         return "main page";
+//     }
 
     Set<Trip> trip = new HashSet<>();
     private TripService tripService;
